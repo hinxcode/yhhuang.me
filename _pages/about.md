@@ -6,6 +6,10 @@ permalink: /
 profile:
   image: prof_pic.jpg
 
+# First day of PhD year one: Oct 1, right after UW classes start.
+# The bio's "first-year", "second-year", ... goes up on the 1st of this month every year.
+phd_year_one: "2026-10-01"
+
 # Links under the bio, in this order.
 links:
   - { label: "hinx [AT] uw [DOT] edu" } # plain text on purpose, to avoid spam
@@ -19,6 +23,6 @@ announcements:
   limit: 5
 ---
 
-I am a PhD student at the [University of Washington Information School](https://ischool.uw.edu/), working with [Benjamin Charles Germain Lee](https://bcglee.github.io/) in the [Lab for Computing Cultural Heritage](https://l4cch.github.io/lab-website). My research sits at the intersection of digital libraries, information retrieval, and computational humanities.
+I am {% include phd_year.liquid start=page.phd_year_one %} PhD student at the [University of Washington Information School](https://ischool.uw.edu/), working with [Benjamin Charles Germain Lee](https://bcglee.github.io/). My research sits at the intersection of digital libraries, information retrieval, and computational humanities.
 
-I study how multimodal machine learning can make large cultural heritage and government collections, from digitized maps and photographs to web archives, discoverable when their metadata is sparse or missing, with a focus on broadening public access to these materials.
+I study how multimodal machine learning can make large cultural heritage and government collections, from digitized maps and photographs to web archives, discoverable when their metadata is sparse or missing.

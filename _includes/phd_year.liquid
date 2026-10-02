@@ -1,0 +1,19 @@
+{%- comment -%}
+  Prints "a first-year", "a second-year", ... from the first day of PhD year one (YYYY-MM-DD) and the build date.
+  The year advances at the start of that month; the Deploy site workflow rebuilds on Oct 1 so this stays current.
+  Usage: {% include phd_year.liquid start=page.phd_year_one %}
+{%- endcomment -%}
+{%- assign start_year = include.start | date: '%Y' | plus: 0 -%}
+{%- assign start_month = include.start | date: '%m' | plus: 0 -%}
+{%- assign now_year = site.time | date: '%Y' | plus: 0 -%}
+{%- assign now_month = site.time | date: '%m' | plus: 0 -%}
+{%- assign years_in = now_year | minus: start_year -%}
+{%- if now_month < start_month -%}
+  {%- assign years_in = years_in | minus: 1 -%}
+{%- endif -%}
+{%- assign phrases = 'a first-year,a second-year,a third-year,a fourth-year,a fifth-year,a sixth-year,a seventh-year,an eighth-year' | split: ',' -%}
+{%- if years_in >= 0 and years_in < phrases.size -%}
+  {{- phrases[years_in] -}}
+{%- else -%}
+  a
+{%- endif -%}
