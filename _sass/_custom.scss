@@ -368,30 +368,35 @@ footer.sticky-bottom {
 
 // ---------------------------------------------------------------- phone
 @media (max-width: 767.98px) {
-  // Phone: photo, then name and bio, then contact links.
+  // Phone: photo with contact links to its right, then name and bio.
   .home-hero {
     padding: 0 0 36px;
     row-gap: 20px;
   }
 
   .home-hero-side {
-    display: contents;
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    max-width: none;
 
     figure {
-      grid-column: 1 / -1;
-      order: 1;
+      flex-shrink: 0;
       width: 112px;
     }
   }
 
   .home-hero-text {
     grid-column: 1 / -1;
-    order: 2;
   }
 
   .home-links {
-    grid-column: 1 / -1;
-    order: 3;
+    min-width: 0;
+
+    span {
+      white-space: nowrap;
+    }
   }
 
   .home-label,
@@ -418,5 +423,16 @@ footer.sticky-bottom {
   .home-news-item {
     flex-direction: column;
     gap: 2px;
+  }
+}
+
+// Narrow phones: shrink the photo so the email still fits on one line beside it.
+@media (max-width: 359.98px) {
+  .home-hero-side {
+    gap: 16px;
+
+    figure {
+      width: 96px;
+    }
   }
 }
