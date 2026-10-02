@@ -8,6 +8,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+  # Rebuild on Jan 1 (footer year) and Sept 1 (PhD year in the bio) even without new commits.
+  schedule:
+    - cron: "0 12 1 1,9 *"
 
 permissions:
   contents: read
