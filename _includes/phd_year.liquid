@@ -1,7 +1,7 @@
 {%- comment -%}
-  Prints "a first-year", "a second-year", ... from the PhD start date (YYYY-MM-DD) and the build date.
-  The year advances in the start month; the Deploy site workflow rebuilds on Sept 1 so this stays current.
-  Usage: {% include phd_year.liquid start=page.phd_start %}
+  Prints "a first-year", "a second-year", ... from the first day of PhD year one (YYYY-MM-DD) and the build date.
+  The year advances at the start of that month; the Deploy site workflow rebuilds on Oct 1 so this stays current.
+  Usage: {% include phd_year.liquid start=page.phd_year_one %}
 {%- endcomment -%}
 {%- assign start_year = include.start | date: '%Y' | plus: 0 -%}
 {%- assign start_month = include.start | date: '%m' | plus: 0 -%}
