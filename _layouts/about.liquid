@@ -1,0 +1,77 @@
+---
+layout: default
+---
+{% comment %}
+  Local override of al_folio_core's about layout: "modern minimal" home page.
+  Hero: photo + contact links in the left (label) column, name + bio in the body column;
+  then labelled sections on the same 12-col grid.
+{% endcomment %}
+<div class="post home">
+  <header class="home-hero">
+    <div class="home-hero-side">
+      {% if page.profile.image %}
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        {% include figure.liquid loading="eager" path=profile_image_path class="home-photo" sizes="220px" alt=site.first_name cache_bust=true %}
+      {% endif %}
+      {% if page.links %}
+        <ul class="home-links">
+          {% for l in page.links %}
+            <li>
+              {% if l.url %}
+                <a
+                  href="{{ l.url | relative_url }}"
+                  {% if l.url contains '://' %}
+                    target="_blank" rel="noopener"
+                  {% endif %}
+                >
+                  {{- l.label -}}
+                </a>
+              {% else %}
+                <span>{{ l.label }}</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    <div class="home-hero-text">
+      <h1 class="home-name">
+        {{ site.first_name }}
+        {{ site.last_name }}
+      </h1>
+      <div class="home-bio">{{ content }}</div>
+    </div>
+  </header>
+
+  {% if page.announcements and page.announcements.enabled and site.news != blank %}
+    <section class="home-section">
+      <h2 class="home-label">News</h2>
+      <div class="home-body">
+        {% assign news = site.news | reverse %}
+        {% for item in news limit: page.announcements.limit %}
+          <div class="home-news-item">
+            <span class="home-date">
+              {%- if item.date_label %}{{ item.date_label }}{% else %}{{ item.date | date: '%Y.%m' }}{% endif -%}
+            </span>
+            <span>
+              {% if item.inline %}
+                {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+              {% else %}
+                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% endif %}
+            </span>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if page.publications %}
+    <section class="home-section">
+      <h2 class="home-label">Publications</h2>
+      <div class="home-body">
+        <div class="publications">{% bibliography --group_by none %}</div>
+      </div>
+    </section>
+  {% endif %}
+</div>

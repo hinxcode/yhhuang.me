@@ -1,0 +1,3 @@
+# Map co-author last names to homepage URLs to turn their names into links in the publication list.
+# Intentionally empty: every co-author is listed the same way, without links.
+{}

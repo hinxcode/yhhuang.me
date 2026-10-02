@@ -1,0 +1,33 @@
+cv:
+  name: Ying-Hsiang Huang
+  label: PhD Student, University of Washington Information School
+  email: ""
+  location: Seattle, WA
+  image: ""
+  summary: PhD student in the Lab for Computing Cultural Heritage at the University of Washington.
+
+  social_networks:
+    - network: GitHub
+      username: hinxcode
+
+  sections:
+    Education:
+      - institution: University of Washington
+        location: Seattle, WA
+        url: https://ischool.uw.edu/
+        area: Information Science
+        studyType: PhD
+        start_date: 2026-09
+        end_date: present
+        highlights:
+          - "Lab for Computing Cultural Heritage, advised by Benjamin Charles Germain Lee"
+      # TODO: add previous degrees
+
+    # Experience:
+    #   - company: ...
+    #     position: ...
+    #     location: ...
+    #     start_date: 2024-06
+    #     end_date: 2025-08
+    #     highlights:
+    #       - ...
