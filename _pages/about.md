@@ -14,6 +14,7 @@ phd_year_one: "2026-10-01"
 links:
   - { label: "hinx [AT] uw [DOT] edu" } # plain text on purpose, to avoid spam
   - { label: Google Scholar, url: "https://scholar.google.com/citations?user=JpS2ld8AAAAJ" }
+  - { label: ORCID, url: "https://orcid.org/0009-0007-4570-7738" }
   - { label: GitHub, url: "https://github.com/hinxcode" }
 
 publications: true # list every paper on the home page
