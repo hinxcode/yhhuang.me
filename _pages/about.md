@@ -26,4 +26,4 @@ announcements:
 
 I am {% include phd_year.liquid start=page.phd_year_one %} PhD student at the [University of Washington Information School](https://ischool.uw.edu/), advised by [Benjamin Charles Germain Lee](https://bcglee.github.io/). My research sits at the intersection of digital libraries, information retrieval, and computational humanities.
 
-I study how multimodal machine learning can make large cultural heritage and government collections, from digitized maps and photographs to web archives, discoverable when their metadata is sparse or missing. To that end, I develop intent-aware information retrieval methods that understand what researchers and the public are looking for, not just the words they type.
+I study how multimodal machine learning can make large cultural heritage and government collections, from digitized maps and photographs to web archives, discoverable when their metadata is sparse or missing. To that end, I design and study intent-aware information retrieval systems that understand what researchers and the public are looking for, not just the words they type.
